@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+
+	<%=  nav_bar brand: "Kunstee", brand_link: "/produtos" %>
+			<table class="table table-bordered ">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Descrição</th>
+						<th>Preço</th>
+						<th>Quantidade</th>
+					</tr>
+				</thead>
+				<tbody>
+						
+					<% @camisa_por_nome.each do |camisa| %>
+						<tr>
+							<td><%= camisa.nome %></td>
+							<td><%= camisa.descricao %></td>
+							<td><%= camisa.quantidade %></td>
+							<td><%= camisa.preco %></td>
+							
+						</tr>
+					<% end %>
+				</tbody>
+			</table>	
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Descrição</th>
+						<th>Preço</th>
+						<th>Quantidade</th>
+					</tr>
+				</thead>	
+				<tbody>
+						
+					<% @camisa_por_preco.each do |camisa| %>
+						<tr>
+							<td><%= camisa.nome %></td>
+							<td><%= camisa.descricao %></td>
+							<td><%= camisa.quantidade %></td>
+							<td><%= camisa.preco %></td>
+							
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+	</body>
+</html>
+
