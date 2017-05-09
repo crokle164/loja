@@ -1,12 +1,12 @@
 class ProdutosController < ApplicationController
 
-	def index
-		@camisa_por_nome = Camisa.order(:nome)
-		@camisa_por_preco = Camisa.order(:preco)
+	def camisas
+		@camisas_por_nome = Camisa.order(:nome)
+		@camisas_por_preco = Camisa.order(:preco)
 	end
 
 	def create
-		valores =params.require(:camisa).permit!
+		valores =params.require(:camisa).permit :nome, :preco, :descricao
 		produto = Camisa.create valores
 	end
 end
