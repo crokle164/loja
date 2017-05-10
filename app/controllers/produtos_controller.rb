@@ -8,5 +8,12 @@ class ProdutosController < ApplicationController
 	def create
 		valores =params.require(:camisa).permit :nome, :preco, :descricao
 		produto = Camisa.create valores
+		redirect_to root_url
+	end
+
+	def destroy
+		id = params[:id]
+		Camisa.destroy id
+		redirect_to root_url
 	end
 end
