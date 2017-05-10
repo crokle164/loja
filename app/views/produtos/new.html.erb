@@ -1,27 +1,30 @@
-<!DOCTYPE html>
-<html>
 
-<body>
+
 
 <%= form_for Camisa.new do |f| %>
-	Nome 
-	<%= f.text_field :nome %>
-	<br>
 
-	Descrição 
-	<%= f.text_area :descricao %>
-	<br>
 
-	Quantidade 
-	<%= f.number_field :quantidade %>
-	<br>
+<div class="form-group">
+	<%= f.label :nome %>
+	<%= f.text_field :nome, class: "form-control" %>	
+</div>
 
-	Preco 
-	<%= f.number_field :preco %>
-	<br>
+<div class="form-group">
+	<%= f.label :descricao %>
+	<%= f.text_area :descricao , class: "form-control"%>
+</div>	
 
-	<%= f.submit %>
+<div class="form-inline">
+	<div class="form-group">
+		<%= f.label :quantidade %>
+		<%= f.number_field :quantidade, class: "form-control" %>
+	</div>
 
+	<div class="form-group">
+		<%= f.label :preco %>
+		<%= f.number_field :preco, class: "form-control" %>
+	</div>
+
+		<%= f.submit  "Criar Produto", class: "btn btn-primary" %>
+</div>
 <% end %>
-</body>
-</html>
